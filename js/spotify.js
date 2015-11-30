@@ -48,7 +48,7 @@ function searchByTrack(keyword) {
       console.log("Ajax request success!")
       var tracks = response.tracks;
       for(i = 0; i < tracks.length; i++) {
-        $("#results").append(tracks[i].name + '<iframe class="player" src="https://embed.spotify.com/?uri=' + tracks[i].href + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+        $("#results").append( "<li class='track'><a href='" + tracks[i].href + "'>" + tracks[i].name + "</a>");
       };
     }).fail(function(){
       console.log("Ajax request failed!")
@@ -58,5 +58,5 @@ function searchByTrack(keyword) {
     });
 };
 
-// <li class='track'><a href='" + tracks[i].href + "'>" + tracks[i].name + "</a>
+// tracks[i].name + '<iframe class="player" src="https://embed.spotify.com/?uri=' + tracks[i].href + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'
 // .append('<iframe class="player" src="https://embed.spotify.com/?uri=' + spotifyTrack + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
